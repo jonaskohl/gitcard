@@ -154,16 +154,16 @@
   function renderCard(card) {
     const DOMcard = document.querySelector("#card");
     const DOMname = DOMcard.querySelector("#card__name");
-    const DOMpronouns = DOMcard.querySelector("#card__pronouns");
     const DOMpronounsLink = DOMcard.querySelector("#card__pronouns__link");
     const DOMbio = DOMcard.querySelector("#card__bio");
     const DOMlinks = DOMcard.querySelector("#card__links");
 
     DOMname.appendChild(document.createTextNode(card.name));
 
-    DOMpronounsLink.href = card.pronouns.link;
-    DOMpronounsLink.appendChild(document.createTextNode(card.pronouns.text));
-    DOMpronouns.appendChild(DOMpronounsLink);
+    if (card.pronouns !== null) {
+      DOMpronounsLink.href = card.pronouns.link;
+      DOMpronounsLink.appendChild(document.createTextNode(card.pronouns.text));
+    }
     
     card.links.forEach(link => {
       const DOMlink = document.createElement("a");
