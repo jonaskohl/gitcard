@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gitcard</title>
+    <link rel="stylesheet" href="/css/site.min.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>How to make a Gitcard</h1>
+      <nav><a href="/">Back to index page</a></nav>
+      <p>
+        If you want to write your card up by hand, you can find the <a href="#syntax-and-structure">syntax &amp; structure</a> below.<br>
+        But for the sake of convenience you can use the following generator.
+      </p>
+      <form id="generator-form" action="#" onsubmit="return false">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name">
+        </div>
+        <div class="field">
+          <label for="pronouns">Pronouns</label>
+          <input type="text" id="pronouns">
+          <div class="note">
+            We link to <a href="https://pronoun.is/" target="_blank">Pronouns Island</a> for pronouns.
+            To see which pronouns this site knows about, see <a href="https://pronoun.is/all-pronouns" target="_blank">their database</a>.<br>
+            You can use multiple pronouns seperated by <q>or</q>, for example: <em>he/him or they/them</em>
+          </div>
+        </div>
+        <div class="field">
+          <label for="bio">Write something about youself</label>
+          <textarea id="bio" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label>Links</label>
+          <template id="link_entry_template">
+            <div class="link_entry">
+              <select class="link_entry_site"></select>
+              <input type="text" class="link_entry_username">
+              <button type="button" class="rem_link_btn">&ndash;</button>
+            </div>
+          </template>
+          <div id="link_list"></div>
+          <button type="button" id="add_link_btn">Add new link</button>
+        </div>
+        <div class="field">
+          <label for="color_bg">Background color</label>
+          <input type="text" class="jscolor" id="color_bg" value="#FFFFFF">
+          <label for="color_fg">Foreground color</label>
+          <input type="text" class="jscolor" id="color_fg" value="#000000">
+          <label for="color_ln">Hyperlink color</label>
+          <input type="text" class="jscolor" id="color_ln" value="#0000FF">
+          <label for="color_la">Hyperlink color (hover &amp; focus)</label>
+          <input type="text" class="jscolor" id="color_la" value="#FF0000">
+        </div>
+      </form>
+      <div class="hsep"></div>
+      <div class="field">
+        <label for="output">Generated code</label>
+        <textarea id="output" rows="10" readonly></textarea>
+      </div>
+      <p>Copy the code above and paste it into a new gist as described <a href="/">here</a>.</p>
+      <p>Additionally, you can <a href="#" target="_blank" id="preview_link">preview your card</a>.</p>
+      <div class="hsep d"></div>
+      <h2 id="syntax-and-structure">Syntax &amp; Structure</h2>
+      <p>For the techy people!</p>
+      <details>
+        <summary>Syntax and structure of card file (click to expand)</summary>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Line no.</th>
+                <th>Field</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Name</td>
+                <td><code>Jonas Kohl</code></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Pronoun(s) (multiple seperated by <q>&nbsp;or&nbsp;</q>)</td>
+                <td><code>he/him or they/them</code></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Bio paragraph</td>
+                <td><code>Hello, this is me!</code></td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Links starting delimiter (has to be <code>links:</code>)</td>
+                <td><code>links:</code></td>
+              </tr>
+              <tr>
+                <td>5+</td>
+                <td>Links (in the format <code><em>site</em>@<site>username</site></code>)</td>
+                <td><code>github@jonaskohl</code></td>
+              </tr>
+              <tr>
+                <td><abbr title="This means one line after all links">&hellip;+1</abbr></td>
+                <td>Links ending delimiter (has to be <code>end;</code>)</td>
+                <td><code>end;</code></td>
+              </tr>
+              <tr>
+                <td colspan="3"><em>Every field below is optional<sup>1</sup></em></td>
+              </tr>
+              <tr>
+                <td>&hellip;+2</td>
+                <td>Foreground color (valid CSS color)</td>
+                <td><code>#000000</code></td>
+              </tr>
+              <tr>
+                <td>&hellip;+3</td>
+                <td>Background color (valid CSS color)</td>
+                <td><code>#ffffff</code></td>
+              </tr>
+              <tr>
+                <td>&hellip;+4</td>
+                <td>Link color (valid CSS color)</td>
+                <td><code>#0000ff</code></td>
+              </tr>
+              <tr>
+                <td>&hellip;+5</td>
+                <td>Link color (hovered &amp; focused) (valid CSS color)</td>
+                <td><code>#ff0000</code></td>
+              </tr>
+            </tbody>
+          </table>
+          <p><sup>1</sup>If a field is defined, every field before also needs to be defined (for example, you can only set the link color if both the foreground and background color are defined)</p>
+        </div>
+      </details>
+      <footer>
+        Gitcard version 1.0.0 &bull; Made with <i class="emoji">&#x2764;&#xFE0F;</i> by <a href="/c/jonaskohl">Jonas Kohl</a> &bull; <a href="https://github.com/jonaskohl/gitcard" target="_blank">Source code</a>
+      </footer>
+    </div>
+    <script src="/js/jscolor.js"></script>
+    <script src="/js/generator.min.js"></script>
+  </body>
+</html>

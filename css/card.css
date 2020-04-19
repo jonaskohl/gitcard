@@ -1,0 +1,103 @@
+@font-face {
+  font-family: "vn-color-emoji";
+  src: local("Apple Color Emoji"),
+       local("Segoe UI Emoji"), 
+       local("Segoe UI Symbol"),
+       local("Noto Color Emoji");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --card-background-color: #fff;
+  --card-foreground-color: #000;
+  --card-link-color: #00f;
+  --card-link-hover-color: #f00;
+}
+
+
+@media (-ms-high-contrast: active), (prefers-contrast: high) {
+  :root {
+    --card-background-color: #000 !important;
+    --card-foreground-color: #fff !important;
+    --card-link-color: #ff0 !important;
+    --card-link-hover-color: #0f0 !important;
+  }
+}
+
+body {
+  font-size: 12pt;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  margin: 0;
+  background-color: var(--card-background-color);
+  color: var(--card-foreground-color);
+}
+
+:link, :visited {
+  color: var(--card-link-color);
+}
+
+:link:hover, :visited:hover {
+  color: var(--card-link-hover-color);
+}
+
+:link:focus, :visited:focus {
+  color: var(--card-link-hover-color);
+  outline: 2px dotted currentColor;
+  outline-offset: 2px;
+}
+
+#card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+#card__name {
+  font-size: 3em;
+}
+
+#card__pronouns {
+  font-style: italic;
+}
+
+#card__bio {
+  margin: 1em 0;
+}
+
+#card__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#card__links>a {
+  display: block;
+  padding: 8px;
+}
+
+#card__links>a>svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+i.emoji {
+  font-style: normal;
+  font-family: "vn-color-emoji";
+}
+
+footer {
+  opacity: 0.5;
+  margin: 2em;
+  font-size: 9pt;
+  text-align: center;
+}

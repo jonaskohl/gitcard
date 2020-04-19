@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gitcard</title>
+    <link rel="stylesheet" href="/css/site.min.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>How to use Gitcard</h1>
+      <article>
+        <header>(Step 0)</header>
+        <p>If you don't already have a GitHub account, create one for free <a href="https://github.com/join" target="_blank">here</a></p>
+      </article>
+      <article>
+        <header>Step 1</header>
+        <p><a href="https://gist.github.com/" target="_blank">Create a public gist</a> on your GitHub profile with a file named <code>me.card</code></p>
+      </article>
+      <article>
+        <header>Step 2</header>
+        <p>Fill out your card information. More on that <a href="cardhowto.html">here</a></p>
+      </article>
+      <article>
+        <header>Step 3</header>
+        <p>Enter your GitHub username below and submit the form to get redirected to your card page!</p>
+      </article>
+      <form action="/card" method="POST">
+        <input type="text" required name="username">
+        <button type="submit">View card</button>
+      </form>
+      <footer>
+        Gitcard version 1.0.0 &bull; Made with <i class="emoji">&#x2764;&#xFE0F;</i> by <a href="/c/jonaskohl">Jonas Kohl</a> &bull; <a href="https://github.com/jonaskohl/gitcard" target="_blank">Source code</a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteRule ^/?api/v1/card/([a-zA-Z0-9\-]{0,39}) /getgistcard.php?user=$1&apiv=1 [L]
+RewriteRule ^/?c/([a-zA-Z0-9\-]{0,39}) /card.php?user=$1 [L,QSA]
+RewriteRule ^/?preview/(.+) /card.php?content=$1&preview=true [L,QSA]
+RewriteRule ^/?card$ /cardredir.php [L]
