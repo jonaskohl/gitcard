@@ -19,4 +19,10 @@ Start off by cloning this repo. Then [create a new authorization token](https://
 define("GITHUB_TOKEN", "<INSERT YOUR TOKEN HERE>");
 ```
 
+It is also recommended you create another file in `.env` with the name of `.htaccess` and the following content:
+
+```
+Deny from all
+```
+
 Thats it! You should now be able to use this instance of Gitcard!
