@@ -7,8 +7,20 @@
     $data = json_decode(base64_decode($_GET["content"]), true);
     $delta = time() - $data["ts"];
     if ($delta > 600) {
-      #header("Location: /");
-      var_dump(base64_decode($_GET["content"]));
+      http_response_code(410);
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Gitcard</title>
+  </head>
+  <body>
+    <div style="font-weight:bold;text-align:center;margin:4px;border:1px solid #aa4;background:#ffc;padding:0.5em;color:#000">This is preview has expired! <a href="/">Go back</a></div>
+  </body>
+</html>
+<?php
       exit;
     }
   }
@@ -30,7 +42,7 @@
       <div id="card__bio"></div>
       <div id="card__links"></div>
       <footer>
-        Gitcard version 1.0.2 &bull; Made with <i class="emoji">&#x2764;&#xFE0F;</i> by <a href="/c/jonaskohl">Jonas Kohl</a> &bull; <a href="https://github.com/jonaskohl/gitcard" target="_blank">Source code</a>
+        Gitcard version 1.0.3 &bull; Made with <i class="emoji">&#x2764;&#xFE0F;</i> by <a href="/c/jonaskohl">Jonas Kohl</a> &bull; <a href="https://github.com/jonaskohl/gitcard" target="_blank">Source code</a>
       </footer>
     </div>
 
