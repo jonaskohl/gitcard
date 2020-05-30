@@ -22,7 +22,7 @@
   </head>
   <body>
 <?php if (@$_GET["preview"] === "true") { ?>
-<div style="font-weight:bold;text-align:center;margin:4px;border:1px solid #aa4;background:#ffc;padding:0.5em">This is a preview! It will expire after 10 minutes!</div>
+<div style="font-weight:bold;text-align:center;margin:4px;border:1px solid #aa4;background:#ffc;padding:0.5em;color:#000">This is a preview! It will expire after 10 minutes!</div>
 <?php } ?>
     <div id="card">
       <div id="card__name"></div>
@@ -30,7 +30,7 @@
       <div id="card__bio"></div>
       <div id="card__links"></div>
       <footer>
-        Gitcard version 1.0.1 &bull; Made with <i class="emoji">&#x2764;&#xFE0F;</i> by <a href="/c/jonaskohl">Jonas Kohl</a> &bull; <a href="https://github.com/jonaskohl/gitcard" target="_blank">Source code</a>
+        Gitcard version 1.0.2 &bull; Made with <i class="emoji">&#x2764;&#xFE0F;</i> by <a href="/c/jonaskohl">Jonas Kohl</a> &bull; <a href="https://github.com/jonaskohl/gitcard" target="_blank">Source code</a>
       </footer>
     </div>
 
